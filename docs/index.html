@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller 8 - Página Larga</title>
+
+    <!--Aquí está el link de mi icon-->
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6iNkj1oh1l1uOzCb3OZZpLZW7iqk04STNT38a-B_dygYLjk3MEdjSGkazg-YZzpOPNXE&usqp=CAU">
+
+    <!--Aquí está mi código style-->
+    <style>
+
+        /*Código style general de la página*/
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /*Aquí está el cósigo style que usé para personalizar la barra de scroll*/
+        body::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #e78632;
+            background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,.3) 20%,transparent 20%,transparent 40%,rgba(255, 255, 255, 0.3) 40%,rgba(255,255,255,.3) 60%,transparent 60%,transparent 80%,rgba(255, 255, 255, 0.3) 80%);
+            border-radius: 5px;
+        }
+
+        /*Código style del div que contiene mi header y mi nav*/
+        .container {
+            display: flex;
+            padding: 8px 0;
+            background-color: rgb(255, 132, 87);
+            position: absolute;
+            width: 100%;
+        }
+
+        /*Aquí está el código de mi Header o 'logo*/
+        header {
+            float: left;
+            width: 25%;
+        }
+
+        .container > header img {
+            float: left;
+            margin: 10px 10px;
+            border-radius: 10px;
+        }
+
+        .container > header > a h1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            justify-content: space-between;
+            margin: 10px 5px;
+            color: aliceblue;
+            transition: all 300ms ease;
+            text-decoration: none;
+        }
+
+        .container > header > a h1:hover {
+            text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+            background: transparent;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /*Aquí está el código de mi nav*/
+        nav {
+            width: 75%;
+            text-align: right;
+            float: right;
+        }
+
+        nav, nav ul {
+            float: right;
+            display: flex;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        nav > ul a {
+            text-decoration: none;
+        }
+
+        nav > ul > a li {
+            color: aliceblue;
+            font-size: 1.5em;
+            margin: 10px 13px 10px 13px;
+            transition: all 300ms linear;
+            padding: 5px 7px;
+        }
+
+        nav li:hover {
+            color: tomato;
+            background-color: antiquewhite;
+            border-radius: 10px;
+        }
+
+        input[name="button"] {
+            color: aliceblue;
+            font-size: 1em;
+            transition: all 300ms linear;
+            padding: 0;
+            border-radius: 10px;
+            background-color: rgb(255, 132, 87);
+            border: none;
+        }
+
+        input[name="button"]:hover {
+            color: tomato;
+            background-color: antiquewhite;
+        }
+
+        /*Aquí está el código style de la wave*/
+        .wave {
+            margin-top: 1.5em;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /*Aquí está el código style de la Section 1 o 'sección introductoria'*/
+        .introduccion {
+            /* background-color: cyan; */
+            /* height: 400px; */
+            margin-top: 0;
+        }
+
+        .introduccion article {
+            width: 40%;
+            float: left;
+            margin-left: 8em;
+            position: absolute;
+            font-family: helvetica;
+
+        }
+
+        .introduccion > article h1 {
+            text-align: left;
+            font-size: 38px;
+        }
+
+        .introduccion > article p {
+            text-align: justify;
+            font-weight: bold;
+            font-size: 19px;
+        }
+
+        .introduccion > article > p span, .introduccion > article > h1 span {
+            color: rgb(255, 132, 87);
+        }
+
+        .introduccion > figure {
+            width: 60%;
+            text-align: right;
+            margin-left: 5em;
+            
+        }
+
+        .introduccion > figure img {
+            width: 350px;
+            height: 280px;
+            border-radius: 150px;
+            position: absolute;
+            float: right;
+            background-color: rgb(255, 132, 87);
+            transition: all 600ms ease;
+        }
+
+        .introduccion > figure img:hover {
+            background: blue;
+            transform: rotate(6deg) scale(1.2) translate(-26px,-44px);
+            -webkit-transform: rotate(6deg) scale(1.2) translate(-26px,-44px);
+            -moz-transform: rotate(6deg) scale(1.2) translate(-26px,-44px);
+        }
+
+        /*Aquí está el código style de mi section con los métodos de pago*/
+        .metodos-pagos {
+            display: flex;
+            margin-top: 15em;
+            font-family: helvetica;
+            border: dashed 7px #000000;
+        }
+
+        .metodos-pagos > article {
+            text-align: justify;
+            background-color: cyan;
+            padding: 2em;
+            font-size: 18px;
+        }
+
+        .metodos-pagos > article > p span {
+            color: rgb(255, 132, 87);
+            font-weight: bold;
+        }
+
+    </style>
+
+<body>
+    
+    <!--Aquí está el div que contiene el header y el nav o 'el logo y la barra de navegación'-->
+    <div class="container">
+
+        <!-- Aquí está el Header -->
+        <header>
+            <img src="https://www.seekpng.com/png/detail/970-9706744_dibujado-a-mano-ilustracin-vehculo-avin-png-y.png" width="40" height="40" alt="" title="GiraTrips Logo">
+            <a href="#"><h1>GiraTrips</h1></a>
+        </header>
+
+        <!--Aquí está el Nav-->
+        <nav>
+            <ul>
+                <a href="#">
+                    <li>Home</li>
+                </a>
+                <a href="#metodos-de-pagos">
+                    <li>Métodos de pago</li>
+                </a>
+                <a href="#">
+                    <li>Destinos</li>
+                </a>
+                <a href="#">
+                    <li>Reseñas</li>
+                </a>
+                <a href="#">
+                    <li>Contacto</li>
+                </a>
+                <a href="taller-del-forms.html" target="_self">
+                    <li>
+                        <input type="button" value="Sing-Up" name="button">
+                    </li>
+                </a>
+                <a href="taller-del-forms-page2.html" target="_self">
+                    <li>
+                        <input type="button" value="Log-In" name="button">
+                    </li>
+                </a>
+            </ul>
+        </nav>
+
+    </div>
+
+        <!--Aquí está el link de la wave que usé para que mi header y nav tuvieran esa ola en la parte de abajo-->
+        <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(255, 132, 87)" fill-opacity="1" d="M0,224L60,192C120,160,240,96,360,80C480,64,600,96,720,112C840,128,960,128,1080,117.3C1200,107,1320,85,1380,74.7L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+        
+
+    <!--Section 1 o 'sección introductoria'-->
+    <section class="introduccion">
+        <article>
+            <h1>Viaja Seguro con <span>GiraTrips</span></h1>
+            <br>
+            <p>
+                A la hora de viajar, viaja con nosotros, somos la mejor compañía de vuelos nacionales, recorre todo panamá cuantas veces quieras, por <span>precios accesibles</span>, <span>papeleo rápido</span> y <span>agentes de confianza</span>
+            </p>
+        </article>
+
+        <figure>
+            <img src="https://www.pngmart.com/files/17/Tourist-Couple-PNG-Clipart.png" alt="Imagen de los modelos de GiraTrips" title="Modelos de GiraTrips">
+        </figure>
+
+    </section>
+
+    <!-- Aquí está el section 2 o 'la sección de métodos de pagos'-->
+    <section class="metodos-pagos" id="metodos-de-pagos">
+
+        <article class="mastercard">
+            <img src="https://www.pngplay.com/wp-content/uploads/12/Mastercard-PNG-HD-Images.png" alt="Targeta de Crédito" width="65" height="50">
+            <h2>Targeta de Crédito</h2>
+
+            <br>
+
+            <p>
+                Ya puedes adquir nuestros fabulosos viajes utilizando tu targeta de crédito. E inclusive si eres cliente <span>MasterCard</span>, te volverás automáticamente parte de nuestros clientes premium, los cuales gozan de excelente y <span>únicas recompensas</span> como lo son los increíbles descuentos y regalos de cortesía.
+            </p>
+        </article>
+
+        <article class="yappy">
+            <img src="https://www.bgeneral.com/wp-content/uploads/2019/05/yappylanding/yappy-logo-landing.png" alt="Yappy" width="50" height="50">
+            <h2>Transferencia Yappy</h2>
+
+            <br>
+
+            <p>
+                Es innegable que <span>GiraTrips</span> no se queda atrás, hemos añadido la novedosa opción de las trasferencias por <span>Yappy</span>, Así ya podrás hacer el envío de los pagos de tus viajes hasta desde tu celular. Házlo, no te quedes atrás, además por los 10 primeros pagos que realices con tu cuenta <Span>Yappy</Span> al ''68435127'' también serás partícipe de diversas recompensas como lo son los increíbles descuentos y <span>regalos de cortesía</span>.
+            </p>
+        </article>
+
+        <article class="efectivo">
+            <img src="https://www.croper.com/assets/efectivo-0eff90def6842cbb127dcb512e4343af9a670c5a319c71e4a3ceea3662971f2d.png" alt="Efectivo" width="50" height="50">
+            <h2>Dinero en efectivo</h2>
+
+            <br>
+
+            <p>
+                Por supuesto que <span>GiraTrips</span> no se olvidaría de los métodos convencionales y efectivos, por lo que cntamos con nuestro método de pagos en <span>Efectivo</span>, éste es dirigido y administrado por agentes de confianza, honestos, responsables, eficaces y trabajadores, <span>Nuestros agentes</span> son gacélas cuando se trata de las maemáticas, por lo que queremos deicirte que con nosotros jamás tendrás que <span>hacer ninguna fila</span>, o tendrás algún retraso con tu viaje.
+            </p>
+        </article>
+
+    </section>
+
+    <!--Aquí está el section 3 o 'la seccion con los lugares e imagenes de destino'-->
+    <section class="destinos">
+
+    </section>
+
+    <!--Aqui está el section con las reseñas de nuestros clientes-->
+    <section class="reseñas">
+
+    </section>
+
+    <!--Aquí está el footer o 'pie de página con nuestra información de contacto'-->
+    <footer>
+
+    </footer>
+
+</body>
+</html>
