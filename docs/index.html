@@ -16,6 +16,7 @@
         * {
             padding: 0;
             margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         /*Aquí está el cósigo style que usé para personalizar la barra de scroll*/
@@ -24,7 +25,7 @@
         }
 
         body::-webkit-scrollbar-track {
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: aliceblue;
         }
 
         body::-webkit-scrollbar-thumb {
@@ -177,7 +178,7 @@
         }
 
         .introduccion > figure img:hover {
-            background: blue;
+            background: rgb(0, 89, 255);
             transform: rotate(6deg) scale(1.2) translate(-26px,-44px);
             -webkit-transform: rotate(6deg) scale(1.2) translate(-26px,-44px);
             -moz-transform: rotate(6deg) scale(1.2) translate(-26px,-44px);
@@ -203,6 +204,98 @@
             font-weight: bold;
         }
 
+        /*Aquí está el código style de mi section 'destinos'*/
+        .destinos {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(255, 132, 87);
+        }
+
+        .destinos > .conoce-destinos h2 {
+            width: 54%;
+            padding: 1em 0 8px 1em;
+            text-align: left;
+            font-size: 30px;
+            font-weight: bold;
+            color: aliceblue;
+            transition: all 300ms ease;
+        }
+
+        .destinos > .conoce-destinos h2:hover {
+            text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .destinos > .destinos-container {
+            display: flex;
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+
+        .destinos-container > article {
+            width: 20%;
+            padding: 1em;
+            margin: 1.5em;
+            text-align: center;
+            background-color: aliceblue;
+            border-radius: 10px;
+            transition: all 300ms ease;
+        }
+
+        .destinos-container > article:hover {
+            transform: scale(1.1) translate(-5px,-3px);
+            -webkit-transform: scale(1.1) translate(-5px,-3px);
+            -moz-transform: scale(1.1) translate(-5px,-3px);
+            border: #4074b5 solid 3px;
+        }
+
+        .destinos-container > article img {
+            width: 190;
+            height: 150px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            border-radius: 10px;
+        }
+
+        .destinos-container > article p {
+            font-weight: bold;
+            text-align: justify;
+        }
+
+        .destinos-container > article > p span {
+            color: rgb(255, 132, 87);
+        }
+
+        /*Aquí está el código style de la section 'reseñas'*/
+        .reseñas {
+            display: flex;
+            position: absolute;
+        }
+
+        .reseñas > .testimonios h2 {
+            font-size: 30px;
+        }
+
+        .reseñas > .testimonios p {
+            text-align: center;
+            padding-top: 1.5em;
+            font-size: 18px;
+        }
+
+        .reseñas > .testimonios > p span {
+            color: rgb(255, 132, 87);
+        }
+
+        .reseñas img {
+            width: 50%;
+            height: 500px;
+        }
+
+        .reseñas > .testimonios {
+            width: 50%;
+            margin: 2em;
+            padding: 2em;
+        }
     </style>
 
 <body>
@@ -225,21 +318,21 @@
                 <a href="#metodos-de-pagos">
                     <li>Métodos de pago</li>
                 </a>
-                <a href="#">
+                <a href="#destinos">
                     <li>Destinos</li>
                 </a>
-                <a href="#">
+                <a href="#reseñas">
                     <li>Reseñas</li>
                 </a>
                 <a href="#">
                     <li>Contacto</li>
                 </a>
-                <a href="taller-del-forms.html" target="_self">
+                <a href="index1.html" target="_self">
                     <li>
                         <input type="button" value="Sing-Up" name="button">
                     </li>
                 </a>
-                <a href="taller-del-forms-page2.html" target="_self">
+                <a href="index2.html" target="_self">
                     <li>
                         <input type="button" value="Log-In" name="button">
                     </li>
@@ -309,11 +402,90 @@
 
     <!--Aquí está el section 3 o 'la seccion con los lugares e imagenes de destino'-->
     <section class="destinos">
+        <div class="conoce-destinos" id="destinos">
+            <h2>
+                Conoce nuestros destinos de vuelo aquí: 🛫💺
+            </h2>
+        </div>
 
+        <br>
+
+        <div class="destinos-container">
+            <article class="chiriqui">
+                <h2>Chiriquí</h2>
+                <img src="https://images.playacommunity.com/photos/tierras-altas-chiriqui-parador-63.jpeg" alt="Tierras altas Chiriquí" title="Tierras altas Chiriquí">
+                <p>
+                    Viaja a <span>Chiriquí</span> de una manera rápida y segura con nosotros, el vuelo es rápido, eficaz y te aseguramos que nuestro personal es 100% amable y eficiente. 
+                    <br>
+                    <span>Precios: </span>
+                    <br>
+                    &rdca; Vuelo normal: B/.80.00 <span>(Incluye la ida y la vuelta)</span>.
+                    <br>
+                    &rdca; Vuelo con tour guiado: B/.100.00 <span>(Incluye la ida y la vuelta)</span>.
+                </p>
+            </article>
+
+            <article class="bocas-del-toro">
+                <h2>Bocas del Toro</h2>
+                <img src="https://content.r9cdn.net/rimg/dimg/7d/3e/c3e5ad61-city-33356-16c4e19af0e.jpg?crop=true&width=1366&height=768&xhint=1586&yhint=1227" alt="Bocas del Toro" title="Bocas del Toro">
+                <p>
+                    Viaja a <span>Bocas del Toro</span> de una manera rápida y segura con nosotros, el vuelo es rápido, eficaz y te aseguramos que nuestro personal es 100% amable y eficiente. 
+                    <br>
+                    <span>Precios: </span>
+                    <br>
+                    &rdca; Vuelo normal: B/.80.00 <span>(Incluye la ida y la vuelta)</span>.
+                    <br>
+                    &rdca; Vuelo con tour guiado: B/.90.00 <span>(Incluye la ida y la vuelta)</span>.
+                </p>
+            </article>
+
+            <article class="veraguas">
+                <h2>Veraguas</h2>
+                <img src="https://comprarenpanama.com/wp-content/uploads/2018/04/turismo-veraguas-editor.jpg" alt="Veraguas" title="Veraguas">
+                <p>
+                    Viaja a <span>Veraguas</span> de una manera rápida y segura con nosotros, el vuelo es rápido, eficaz y te aseguramos que nuestro personal es 100% amable y eficiente. 
+                    <br>
+                    <span>Precios: </span>
+                    <br>
+                    &rdca; Vuelo normal: B/.70.00 <span>(Incluye la ida y la vuelta)</span>.
+                    <br>
+                    &rdca; Vuelo con tour guiado: B/.80.00 <span>(Incluye la ida y la vuelta)</span>.
+                </p>
+            </article>
+
+            <article class="boquete">
+                <h2>Boquete</h2>
+                <img src="https://i.ytimg.com/vi/4CMz3WiPjkE/maxresdefault.jpg" alt="Boquete" title="Boquete">
+                <p>
+                    Viaja a <span>Boquete</span> de una manera rápida y segura con nosotros, el vuelo es rápido, eficaz y te aseguramos que nuestro personal es 100% amable y eficiente. 
+                    <br>
+                    <span>Precios: </span>
+                    <br>
+                    &rdca; Vuelo normal: B/.60.00 <span>(Incluye la ida y la vuelta)</span>.
+                    <br>
+                    &rdca; Vuelo con tour guiado: B/.70.00 <span>(Incluye la ida y la vuelta)</span>.
+                </p>
+            </article>
+        </div>
+        
     </section>
+    
+    <!--Aquí está el código del wave de la section de 'destinos'-->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#FF8457" fill-opacity="1" d="M0,64L48,74.7C96,85,192,107,288,106.7C384,107,480,85,576,96C672,107,768,149,864,176C960,203,1056,213,1152,202.7C1248,192,1344,160,1392,144L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
 
     <!--Aqui está el section con las reseñas de nuestros clientes-->
-    <section class="reseñas">
+    <section class="reseñas" id="reseñas">
+            <img src="https://reseñas-google.es/templates/yootheme/cache/escribir%20una%20rese%C3%B1a%20en%20google-4355e481.png" width="100" height="100" alt="5 estrellas reseñas">
+            <article class="testimonios"> 
+            <h2>Reseñas</h2>
+            <p>
+                <i>
+                    "¡Woao! Estoy impresionada, es la primera vez que viajo con agentes tan eficientes. He tenido cientos de malas experiencias con otras agencias de viajes, pero con <span>GiraTrips</span> no tuve absolutamente ningún problema, ni siquiera hubo retrasos, el personal me trató como reina, con respeto y dedicación. Se los aseguro, <span>GiraTrips</span> es la mejor agencia de viajes."
+                    <br>
+                    <span style="text-align: left;">~ Girasema Cáceres (Clienta)</span>
+                </i>
+            </p>
+        </article>
 
     </section>
 
